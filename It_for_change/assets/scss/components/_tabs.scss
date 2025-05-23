@@ -1,0 +1,64 @@
+   @use '../abstracts' as *;
+
+// .pizza_menu--section {
+//   background-color: $primary;
+//   position: relative;
+//   padding: 100px 0;
+
+//   @media (max-width: #{$breakpoint-tablet}) {
+//     /* Styles for tablet devices */
+//     padding: 32px 10px;
+//   }
+
+//   h2 {
+//     text-align: center;
+//   }
+
+//   .bef-exposed-form { 
+//     margin-top: 40px;
+//     .tabs-list {
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: center;
+
+//       .tab-item {
+//         .nav-link {
+//           color: $black;
+//           padding: 6px 16px;
+//           cursor: pointer;
+
+//           &.bef-link--selected { 
+//             background: $black;
+//             color: $white;
+//           }
+//         }
+//         &:first-child {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+  
+//   .tab_content--block {
+//     margin-top: 32px;
+
+//     .tab-content {
+//        display: none;
+
+//       &.tab-active {
+//         display: block;
+//       }
+
+//       .pizza_card--block {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr 1fr;
+//         gap: 32px;
+
+//         @media (max-width: #{$breakpoint-tablet}) {
+//           /* Styles for tablet devices */
+//           grid-template-columns: 1fr;
+//         }
+//       }
+//     }
+//   }
+// }

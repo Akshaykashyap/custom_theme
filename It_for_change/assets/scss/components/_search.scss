@@ -1,0 +1,120 @@
+   @use '../abstracts' as *;
+
+// .search-block-form {
+//     display: inline-block;
+//     width: 13rem;
+//     @include breakpoint($bp--large) {
+//       width: 18rem;
+//     }
+//     form {
+//       padding: 0;
+//       > .js-form-item {
+//         display: inline-block;
+//         padding-right: 0.5rem;
+//         padding-top: 0;
+//         width: 10rem;
+//         @include breakpoint($bp--large) {
+//           width: 15rem;
+//         }
+//       }
+//       > .form-actions {
+//         display: inline-block;
+//         padding: 0;
+//       }
+//     }
+//     .form-submit {
+//       padding: 0.25em;
+//       background-color: transparent;
+//       background-image: url('../images/search_icon.svg');
+//       background-position: center;
+//       background-repeat: no-repeat;
+//       background-size: cover;
+//       text-indent: -999em;
+//       width: 2rem;
+//       height: 2rem;
+//     }
+//   }
+  
+  
+//   .search-page-form {
+//     display: inline-block;
+//     width: 100%;
+//     @include breakpoint($bp--large) {
+//       width: 30rem;
+//     }
+//     .form-wrapper {
+//       display: block;
+//       padding: 0;
+//       > .form-item {
+//         display: inline-block;
+//         padding-right: 0.5rem;
+//         padding-top: 0;
+//         width: 10rem;
+//         @include breakpoint($bp--large) {
+//           width: 15rem;
+//         }
+//       }
+//       > .form-actions {
+//         display: inline-block;
+//         padding: 0;
+//       }
+//     }
+//     .form-submit {
+//       display: inline-block;
+//     }
+//   }
+  
+//   .search-advanced > summary {
+//     margin-top: 0.5rem;
+//   }
+  
+//   .search-form {
+//     .form-submit {
+//       height: 2rem;
+//       margin: auto 0 auto 5px;
+//     }
+  
+//     .search-advanced {
+//       display: block;
+  
+//       > fieldset {
+//         padding: 20px;
+//         margin: 20px 0;
+//         all: revert;
+//       }
+//       legend {
+//         float: none;
+//         width: inherit;
+//       }
+//       .form-switch,
+//       .form-check-input {
+//         all: revert;
+//         display: inline-block;
+//       }
+//       .form-type-textfield {
+//         display: inline-block;
+//         width: 32%;
+//         padding: 0.2rem;
+//       }
+//     }
+  
+//     .search-results {
+//       margin-left: 0;
+//       max-width: none;
+//     }
+//   }
+//   .search-main-container.main {
+//     display: flex;
+//   }
+//   .searchcontenthelp { 
+//     .main {
+//       all: revert;
+//     }
+//     .About-searching-list {
+//       ul {
+//         width: calc(33.33% - (1rem / 2));
+//         display: inline-block;
+//       }
+//     }
+//   }
+ 

@@ -1,0 +1,36 @@
+/**
+*********************
+* Colors
+********************
+**/
+
+
+@use "sass:color" as color;
+
+$ITfC-White: #FFFFFF;
+$ITfC-Off-white: #FAFCFF;
+$ITfC-Blue2: #D4E5FF;
+$ITfC-Blueblack: #000E1D;
+$ITfC-Darkblue: #0F2F52;
+$ITfC-Greydark: #3A3A3A;
+$ITfC-Blue01: #FAFCFF;
+$ITfC-Blue1: #E8F1FF;
+$ITfC-Blue2: #D4E5FF;
+$ITfC-Green: #5CC150;
+$ITfC-Imagegrey: #D9D9D9;
+$ITfC-LightGrey: #DFDFDF;
+$ITfC-LogoBlue: #0068EF;
+$ITfC-MediumGrey: #A6A6A6;
+$ITfC-Navyblue: #083D77;
+$ITfC-Orange: #F8724A;
+$ITfC-Red: #C73459;
+$ITfC-Yellow: #F6C513; 
+
+
+//Border
+$c-border: $ITfC-LogoBlue;
+
+/* Third party brand colors */
+$color--facebook: #03539e !default;
+$color--twitter: #35ccff !default;
+$color--linkedin: #217bc1 !default;

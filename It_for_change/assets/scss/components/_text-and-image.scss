@@ -1,0 +1,115 @@
+   @use '../abstracts' as *;
+
+// .text_media--section {
+//   padding-top: 150px;
+//   padding-bottom: 100px;
+
+//   @media (max-width: #{$breakpoint-mobile}) {
+//     /* Styles for mobile devices */
+//     padding: 32px 10px;
+//   }
+
+//   &#findUs {
+//     .text_media--block {
+//       .media-block {
+//         @media (max-width: #{$breakpoint-mobile}) {
+//           /* Styles for mobile devices */
+//           order: 1;
+//         }
+//       }
+
+//       .text-block {
+//         @media (max-width: #{$breakpoint-mobile}) {
+//           /* Styles for mobile devices */
+//           order: inherit;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .text_media--block {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 24px;
+
+//   @media (max-width: #{$breakpoint-mobile}) {
+//     /* Styles for mobile devices */
+//     grid-template-columns: 1fr;
+//   }
+
+//   .text-block {
+//     max-width: 400px;
+//     width: 100%;
+
+//     @media (max-width: #{$breakpoint-mobile}) {
+//       /* Styles for mobile devices */
+//       order: 2;
+//     }
+
+//     p {
+//       @extend %poppins-light;
+//       padding: 40px 0 24px;
+
+//       @media (max-width: #{$breakpoint-mobile}) {
+//         /* Styles for mobile devices */
+//         padding: 24px 0;
+//       }
+//     }
+
+//     .socail_links--btn {
+//       @media (max-width: #{$breakpoint-mobile}) {
+//         /* Styles for mobile devices */
+//         display: flex;
+//         flex-wrap: wrap;
+//         gap: 16px;
+//       }
+
+//       li {
+//         padding-bottom: 16px;
+
+//         &:last-child {
+//           padding-bottom: 0;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // Exclusive offers 
+
+// .exclusive_offer--block {
+//   background: $primary;
+//   display: grid;
+//   grid-template-columns: 2fr 1fr;
+//   gap: 32px;
+//   align-items: center;
+
+//   @media (max-width: #{$breakpoint-mobile}) {
+//     /* Styles for mobile devices */
+//     grid-template-columns: 1fr;
+//     padding: 32px 10px 0;
+//   }
+
+//   .exclusive_offer--text {
+//     padding-left: 15%;
+//     max-width: 600px;
+
+//     @media (max-width: #{$breakpoint-mobile}) {
+//       /* Styles for mobile devices */
+//       padding-left: 0;
+//     }
+
+//     p {
+//       @extend %poppins-bold;
+//       background: white;
+//       display: inline-block;
+//       padding: 6px 14px;
+//     }
+
+//     h2 {
+//       padding: 32px 0;
+//     }
+//   }
+// }
+

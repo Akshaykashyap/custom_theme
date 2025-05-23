@@ -1,0 +1,90 @@
+   @use '../abstracts' as *;
+
+// .featured_media--card {
+//   background: $white;
+//   display: flex;
+//   flex-direction: column;
+//   transition: all ease-in-out .5s;
+
+//   &:hover {
+//     box-shadow: 0px 5px 10px -1px rgba(0,0,0,0.75);
+//   }
+
+//   .card-header {
+//     position: relative;
+
+//     figcaption {
+//       @extend %poppins-bold;
+//       position: absolute;
+//       bottom: 0;
+//       background: $white;
+//       padding: 6px 20px 6px 10px;
+//       left: 30px;
+//     }
+//     img {
+//         width: 479px;
+//         height: 479px;
+//         object-fit: cover;
+//     }
+//   }
+
+//   .card-body {
+//     padding: 30px 30px 18px 30px;
+//     flex: 1 1 auto;
+//     min-height: 225px;
+
+//     .card-title {
+//       @extend %poppins-bold;
+//       font-size: $f29;
+//       line-height: 39px;
+//       letter-spacing: 0px;
+    
+//       @media (max-width: #{$breakpoint-mobile}) {
+//         /* Styles for mobile devices */
+//         font-size: $f20;
+//         line-height: 30px;
+//         letter-spacing: 2px;
+//       }
+//       a {
+//         color: $black;
+//         &:active {
+//           color: blueviolet;
+//         }
+//       }
+//     }
+
+//     .card-desc, .card-price {
+//       @extend %poppins-light;
+//       font-size: $f18;
+//       line-height: 28px;
+//       letter-spacing: 1px;
+//       color: $black;
+//       padding-top: 24px;
+    
+//       @media (max-width: #{$breakpoint-mobile}) {
+//         /* Styles for mobile devices */
+//         font-size: $f16;
+//         line-height: 26px;
+//         letter-spacing: 0px;
+//       }
+//     }
+//   }
+
+//   .card-footer {
+//     .card-price {
+//       @extend %poppins-bold;
+//       font-size: $f29;
+//       line-height: 28px;
+//       letter-spacing: 1px;
+//       color: $black;
+//       padding: 0 30px 30px 30px;
+    
+//       @media (max-width: #{$breakpoint-mobile}) {
+//         /* Styles for mobile devices */
+//         font-size: $f16;
+//         line-height: 26px;
+//         letter-spacing: 0px;
+//       }
+//     }
+//   }
+// }

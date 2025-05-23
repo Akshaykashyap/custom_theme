@@ -1,0 +1,421 @@
+/* Each mixin in this file */
+@use 'variables' as *;
+@use 'colors' as *;
+
+@mixin transition($props...) {
+  transition: $props;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Box shadow
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+
+// Flex container
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Background image
+@mixin background-image($url, $size: cover, $position: center center, $repeat: no-repeat) {
+  background-image: url($url);
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+// Text color
+@mixin color($color) {
+  color: $color;
+}
+
+@mixin hover-transition($property: all, $duration: 0.3s, $timing: ease-in-out) {
+  transition: $property $duration $timing;
+}
+
+/* Define a mixin for fonts */
+@mixin font($font-family-base,$font-size-base,$font-style:normal,$font-weight-base:normal,$line-height-base:normal) {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-style: $font-style;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+}
+
+
+@mixin hide-text {
+  display: block;
+  overflow: hidden;
+  text-indent: -9000px;
+}
+
+// Clearfix
+@mixin clearfix() {
+  &::before,
+  &::after {
+    display: table;
+    content: "";
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// Hide elements visually, but keep them available for screen readers.
+@mixin visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+/// Color mixin to set both text and background colors
+/// Usage: @include color-all(#fff, #000);
+
+@mixin color-all($text-color: null, $bg-color: null) {
+  @if $text-color {
+    color: $text-color;
+  }
+
+  @if $bg-color {
+    background-color: $bg-color;
+  }
+}
+
+/// Full background property mixin
+/// $color: optional solid background color
+/// $image: optional background image URL
+/// $repeat: repeat, no-repeat, repeat-x, etc.
+/// $position: top, center, bottom, etc.
+/// $size: contain, cover, auto
+/// $attachment: scroll or fixed
+
+@mixin background-all(
+  $color: null,
+  $image: null,
+  $repeat: no-repeat,
+  $position: center,
+  $size: cover,
+  $attachment: scroll
+) {
+  @if $color {
+    background-color: $color;
+  }
+
+  @if $image {
+    background-image: url(#{$image});
+  }
+
+  background-repeat: $repeat;
+  background-position: $position;
+  background-size: $size;
+  background-attachment: $attachment;
+}
+
+
+@mixin text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Breakpoints mixin
+@mixin breakpoint($class) {
+    @if $class == $bp--xsmall {
+        @media (min-width: $bp--xsmall) { @content; }
+    }
+    @if $class == $bp--small {
+        @media (min-width: $bp--small) { @content; }
+    }
+    @if $class == $bp--medium {
+        @media (min-width: $bp--medium) { @content; }
+    }
+    @if $class == $bp--large {
+        @media (min-width: $bp--large) { @content; }
+    }
+    @if $class == $bp--xlarge {
+        @media (min-width: $bp--xlarge) { @content; }
+    }
+    @if $class == $bp--xxlarge {
+        @media (min-width: $bp--xxlarge) { @content; }
+    }
+    @if $class == $bp--xxxlarge {
+        @media (min-width: $bp--xxxlarge) { @content; }
+    }
+}
+
+// Mixins to use everywhere you need to set font size.
+@mixin font-size-extra-large() {
+    @include breakpoint($bp--xsmall) {
+        letter-spacing: 0.9px;
+        @include font($font-BitterBold, 30px, normal, $fw--700, normal);
+    }
+
+    @include breakpoint($bp--large) {
+        @include font($font-BitterBold, 36px, normal, $fw--700, normal);
+    }
+    @include breakpoint($bp--xxlarge) {
+        letter-spacing: 1.38px;
+        @include font($font-BitterBold, 46px, normal, $fw--700, 50px);
+    }
+}
+
+@mixin font-size-large() {
+    @include breakpoint($bp--xsmall) {
+        letter-spacing: 0.9px;
+        @include font($font-BitterBold, 30px, normal, $fw--700, normal);
+    }
+
+    @include breakpoint($bp--large) {
+        @include font($font-BitterBold, 32px, normal, $fw--700, normal);
+    }
+
+    @include breakpoint($bp--xxlarge) {
+        @include font($font-BitterBold, 36px, normal, $fw--700, 40px);
+    }
+}
+
+
+@mixin font-size-medium-large() {
+    @include breakpoint($bp--xsmall) {
+        @include font($font-BitterBold, 22px, normal, $fw--700, 30px);
+    }
+
+    @include breakpoint($bp--xxlarge) {
+        @include font($font-BitterBold, 22px, normal, $fw--700, 30px);
+    }
+}
+
+@mixin font-size-medium() {
+    @include breakpoint($bp--xsmall) {
+        @include font($font-BitterBold, 18px, normal, $fw--700, 24px);
+    }
+    @include breakpoint($bp--xxlarge) {
+        @include font($font-BitterBold, 18px, normal, $fw--700, 24px);
+    }
+}
+
+@mixin font-size-small-medium() {
+    @include breakpoint($bp--xsmall) {
+        @include font($font-bitterRegular, 14px, normal, $fw--400, 16px);
+    }
+    @include breakpoint($bp--xxlarge) {
+        @include font($font-bitterRegular, 24px, normal, $fw--400, 26px);
+    }
+}
+
+
+@mixin font-size-small() {
+    @include breakpoint($bp--xsmall) {
+        @include font($font-BitterBold, 20px, normal, $fw--300, normal);
+    }
+
+    @include breakpoint($bp--xxlarge) {
+        @include font($font-BeVietnamProExtraLight, 22px, normal, $fw--200, normal);
+        letter-spacing: 1.76px;
+    }
+}
+
+@mixin font-size-extra-small() {
+    @include breakpoint($bp--xsmall) {
+        @include font($font-BeVietnamProLight, 14px, normal, $fw--300, 25px);
+    }
+
+    @include breakpoint($bp--xxlarge) {
+          @include font($font-BeVietnamProLight,17px, normal, $fw--300 , 30px);
+    }
+}
+
+// @mixin font-size-extra-extra-small() {
+//     font-size: rem(13);
+
+//     @include breakpoint($bp--large) {
+//         font-size: rem(14);
+//     }
+// }
+
+// Headings
+@mixin t--h1() {
+    color: $ITfC-White;
+    margin: 0.1em 0 0.3em;
+    @include font-size-extra-large();
+
+    a {
+        color: $ITfC-LogoBlue;
+    }
+}
+
+@mixin t--h2 {
+    color: $ITfC-Darkblue;
+    margin: 3.75rem 0 2.5rem 0;
+    @include font-size-large(); 
+
+    a {
+        color: $ITfC-LogoBlue;
+    }
+}
+
+@mixin t--h3 {
+     margin: 1rem 0;
+     padding: 10px 0;
+     color: $ITfC-Darkblue;
+      @include font-size-medium-large();
+     
+     &:hover {
+        color: $ITfC-LogoBlue;
+    }
+}
+
+@mixin t--h4 {
+    margin: .7rem 0;
+    color: $ITfC-Darkblue;
+    @include font-size-small-medium();
+}
+
+
+// Base text
+@mixin t--base {
+     color: $ITfC-Blueblack;
+    @include font-size-extra-small();
+}
+
+// Type text header menu
+@mixin t--main-menu {
+    text-transform: uppercase;
+    color: $ITfC-Darkblue;
+    @include font-size-small();
+
+    &:hover {
+       color: $ITfC-LogoBlue;
+       font-weight: 600;
+    }
+}
+// banner sub menus
+@mixin t--base-sub-menu {
+    text-transform: capitalize;
+    @include font-size-small-medium();
+    &:hover {
+        color: $ITfC-LogoBlue;
+        font-weight: 700;
+        line-height: 26px;
+        text-decoration: underline;
+     }
+}
+
+
+// GRADIENT MIXINS
+
+@mixin linear-gradient-main() {
+    background-image: linear-gradient(to bottom, $color-main, $color-main);
+}
+
+@mixin linear-gradient-main-hover() {
+    background-image: linear-gradient(to bottom, $color-main, $color-main);
+}
+
+@mixin linear-gradient-secondary() {
+    background-image: linear-gradient(to bottom, $c-grass-green, $c-grass-green30);
+}
+
+@mixin linear-gradient-secondary-hover() {
+    background-image: linear-gradient(to bottom, $c-grass-green30, $c-grass-green10);
+}
+
+
+// Button 
+@mixin button() {
+    @include t--base();
+    @include font-size-extra-small();
+    @include linear-gradient-main();
+    background: linear-gradient(to bottom, #b6d478 0%, #4e800d 100%);
+    /* W3C */
+    color: $c-black;
+    border: medium none;
+    display: inline-block;
+    padding: 0.3rem 2.5rem;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: .5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        color: $c-white;
+    }
+}
+
+@mixin button-secondary() {
+    background: linear-gradient(to bottom, #b8d5d5 0%, #19706f 100%);
+    /* W3C */
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@mixin border-radius($radius: .15em) {
+	border-radius: $radius;
+}
+
+@mixin teaser-base {
+    overflow: hidden;
+    display: flex;
+}
+  
+@mixin teaser-border-radius {
+    border-radius: .125rem 0.625rem 0.625rem 0.625rem;
+}
+  
+@mixin teaser-fullbar-spacing {
+    border-left: 1rem solid;
+}
+
+@mixin teaser-header-spacing {
+    border-left: 1rem solid;
+    padding: .5rem;
+}
+
+@mixin teaser-h-line {
+    border-bottom: 4px solid;
+}
+
+@mixin line-gradient($baseopacity, $factor, $color1, $color2) {
+    $compute_factor: $baseopacity + $factor;
+      background: linear-gradient(to bottom,  rgba($color1, 1) 0%, rgba($color2, $baseopacity) 100%); /* W3C */
+    
+}
+
+// Smart Grid
+/// Include in a parent element to layout all children
+/// @param $row-items [4] - How many items per row
+/// @param $gutter [1rem] - Space between Items
+@mixin smart-grid($row-items: 4, $gutter: $grid-gutter) {
+    $column: calc(100% / $row-items);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    > * {
+      margin-bottom: $gutter;
+      @if $row-items > 1 {
+        width: calc(#{$column} - (#{$gutter} / 2));
+      } @else {
+        width: 100%;
+      }
+    }
+}
+  

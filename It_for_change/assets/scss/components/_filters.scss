@@ -1,0 +1,414 @@
+   @use '../abstracts' as *;
+
+// /* homepage sampler/callout section */
+// .callout {
+//     padding: .5rem; 
+//     display: flex;
+//     flex-direction: column;
+  
+//     &__heading {
+//       width: 100%;
+//     }
+  
+//     &__box {
+//       padding: 1rem;
+//       min-height: 100px;
+//       display: flex;
+//       flex-direction: column;
+//       flex-grow: 1;
+//     }
+  
+//     &__text {
+//       margin-bottom: 1.5rem;
+//     }
+  
+//     &__subitem {
+  
+//       .colorbar-teaser  {
+//         margin: 1.5rem 0;
+//       }
+//     }
+  
+//     &__button {
+//       margin-top: auto;
+//       margin: 0 auto;
+//     }
+  
+//     &__gold {
+//       background-color:$c-niso-gold10;
+  
+//       .colorbar-teaser {
+//         border-color: $c-niso-gold;
+//       }
+//     }
+  
+//     &__green {
+//       background-color:$c-grass-green10;
+  
+//       .colorbar-teaser {
+//         border-color: $c-grass-green;
+//       }
+//     }
+  
+//     &__teal {
+//       background-color:$c-bold-teal0;
+  
+//       .colorbar-teaser {
+//         border-color: $c-bold-teal;
+//       }
+//     }
+  
+//     &__red {
+//       background-color:$c-niso-red10;
+  
+//       .colorbar-teaser {
+//         border-color: $c-niso-red;
+//       }
+//     }
+//     &__grey {
+//       background-color:$c-warm_grey10;
+  
+//       .colorbar-teaser {
+//         border-color: $c-warm_grey;
+//       }
+//     }
+  
+// }
+// .teaser {
+//     // @include clearfix();
+//     @include teaser-base();
+//     @include teaser-border-radius();
+//     @include teaser-fullbar-spacing();
+  
+//     border-color: $c-bold-teal;
+//     background-color: $c-white;
+//     margin: 0 0 1.5rem 0; 
+    
+//     &__include-header {
+//       flex-direction: column;
+//     }
+  
+//     &__remove-fullbar {
+//       border-left: none;
+  
+//       .teaser__header {
+//         display: block;
+//         border-left: 1rem solid;
+//       }
+  
+//       .teaser__info {
+//         padding-left:0;
+//       }
+//     }
+  
+  
+//     &__header {
+//       display: flex;
+//       font-family: $ff--serif;
+//       font-weight: normal;
+//       margin-bottom: 1rem;
+//       padding: .5em;
+//       width: 100%;
+  
+//       &-title {
+  
+//         &-small {
+//           @include font-size-small();
+//         }
+  
+//         &-medium {
+//           @include font-size-medium();
+//         }
+  
+//         &-large {
+//           @include font-size-large();
+//         }
+//       }
+  
+//       &-gold {
+//         background-color: $c-niso-gold30;
+//         border-color: $c-niso-gold;
+//       }
+  
+//       &-green {
+//           background-color: $c-grass-green30;
+//           border-color: $c-grass-green !important;
+//       }
+  
+//       &-teal {
+//           background-color: $c-bold-teal30;
+//           border-color: $c-bold-teal !important;
+//       }
+  
+//       &-red {
+//           background-color: $c-niso-red30;
+//           border-color: $c-niso-red !important;
+//       }
+  
+//       &-purple {
+//           background-color: $c-purple30;
+//           border-color: $c-purple !important;
+//       }
+  
+//       &-icon {
+//         padding-right: .2em;
+//         float: left;
+//       }
+  
+//     }
+  
+//     &__info {
+//       width: 100%;
+//       font-size: .75rem;
+//       padding: .5rem;
+//     }
+    
+//     &__title {
+//       margin-bottom: 1rem;
+//       font-weight: $fw--400;
+      
+//       &-link,
+//       & a {
+//         color: $c-warm-grey;
+//         text-decoration: underline;
+//       }
+  
+//       &-serif {
+//         font-family: $ff--serif;
+//       }
+  
+//       &-regular {
+//         font-family: $ff--regular;
+//       }
+      
+//       &-line {
+//           border-bottom: 4px solid;
+//           padding-bottom: 1rem;
+  
+//           //Fullbar color variations
+//           &-gold {
+//             border-color: $c-niso-gold;
+//           }
+  
+//           &-green {
+//             border-color: $c-grass-green;
+//           }
+  
+//           &-red {
+//             border-color: $c-niso-red;
+//           }
+  
+//           &-purple {
+//             border-color: $c-purple;
+//           }
+  
+//           &-teal {
+//             border-color: $c-bold-teal;
+//           }
+//         }
+  
+//       //Title color variations
+//       &-gold,
+//       &-gold a {
+//         color: $c-niso-gold;
+//       }
+  
+//       &-green,
+//       &-green a {
+//         color: $c-grass-green;
+//       }
+  
+//       &-red,
+//       &-red a {
+//         color: $c-niso-red;
+//       }
+  
+//       &-purple,
+//       &-purple a {
+//         color: $c-purple;
+//       }
+  
+//       &-teal,
+//       &-teal a {
+//         color: $c-bold-teal;
+//       }
+  
+//     }
+  
+//     &__image {
+//       display: flex;
+//       height: auto;
+//       vertical-align: top;
+//       justify-content: top;
+//       width: 50%;
+  
+//       div {
+//         line-height: 0;
+//       }
+  
+//       img {
+//         display: block;
+//       }
+  
+//       &-bg {
+  
+//         &-gold {
+//           background-color: $c-niso-gold10;
+//         }
+  
+//         &-green {
+//           background-color: $c-grass-green10;
+//         }
+  
+//         &-red {
+//           background-color: $c-niso-red10;
+//         }
+  
+//         &-purple {
+//           background-color: $c-purple10;
+//         }
+  
+//         &-teal {
+//           background-color: $c-bold-teal10;
+//         }
+//       }
+//     }
+  
+//     &__subtext {
+//       color: $c-warm-grey2;
+//       margin: 0 0 .8rem 0;
+//       font-weight: $fw--500;
+//       @include font-size-extra-small();
+  
+//       &-small { @include font-size-small(); }
+  
+//       &-medium { @include font-size-medium(); }
+  
+//       &-large { @include font-size-large(); }
+//     }
+  
+//     &__body {
+//       font-weight: $fw--300;
+//       @include font-size-extra-small();
+  
+//       &-small { @include font-size-small(); }
+  
+//       &-medium { @include font-size-medium(); }
+  
+//       &-large { @include font-size-large(); }
+  
+//       p {
+//         margin: 0 0 .5rem 0;
+//       }
+//     }
+  
+//     &__title-link {
+//       text-decoration: underline;
+  
+//       &:hover {
+//         color: $c-dusty-blue30;
+//         text-decoration: underline;
+//       }
+//     }
+  
+//     //Teaser Color Variations
+//     &-gold {
+//       border-color: $c-niso-gold;
+//     }
+  
+//     &-green {
+//       border-color: $c-grass-green;
+//     }
+  
+//     &-red {
+//       border-color: $c-niso-red;
+//     }
+  
+//     &-purple {
+//       border-color: $c-purple;
+//     }
+  
+//     &-teal {
+//       border-color: $c-bold-teal;
+//     }
+  
+//     &__publication-links {
+//       padding-top: 1rem;
+//       line-height: 1.5rem;
+//       display: flex;
+//       flex-wrap: wrap;
+//       align-items: center;
+  
+//       .icon-link {
+//         border-left: 1px solid #000000;
+//         padding:0 .5rem 0 1em;
+//         margin: 1rem 0;
+//         margin-left: 1em;
+  
+//         &:first-child {
+//           padding-left: 0;
+//           border-left: none;
+//           margin-left: 0;
+//         }
+        
+//         &:last-child { 
+//          margin-left: 1em;
+//         }
+//       }
+//     }
+  
+  
+//   }
+  
+// .teaser__include-header.teaser__remove-fullbar {
+//     .teaser__info {
+//         padding-left:2rem;
+//     }
+// }
+
+// .hline {
+//     text-align: left;
+//     height:6px;
+//     margin: 1.5rem 0 3rem 0;
+//     background-color: $c-black;
+//     position: relative;
+//       @include breakpoint($bp--xlarge) {
+//         margin-bottom: 2.5rem;
+//       }
+  
+//     & h2 {
+//       @include font-size-medium-large();
+//       font-weight: $fw--600;
+//       background-color:$c-white;
+//       float:left;
+//       position:absolute;
+//       left: 0;
+//       box-shadow: 0 0 0 1rem rgba(255,255,255,1);
+//       top: -17px;
+  
+  
+//       @include breakpoint($bp--large) {
+//         top: -20px;
+//       }
+//     }
+  
+//     &__gold {
+//       background-color:$c-niso-gold;
+//     }
+  
+//     &__green {
+//       background-color:$c-grass-green;
+//     }
+  
+//     &__teal {
+//       background-color:$c-bold-teal;
+//     }
+  
+//     &__red {
+//       background-color:$c-niso-red;
+//     }
+  
+//     &__purple {
+//       background-color:$c-purple;
+//     }
+// }

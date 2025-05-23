@@ -1,0 +1,73 @@
+/* VARIABLES */
+@use 'colors' as *;
+
+// Font Family Bitter
+$font-bitterRegular: 'BitterRegular', sans-serif;
+$font-BitterBlack: 'BitterBlack', sans-serif;
+$font-BitterBold: 'BitterBold', sans-serif;
+$font-BitterLight: 'BitterLight', sans-serif;
+$font-BitterExtraLight: 'BitterExtraLight', sans-serif;
+$font-BitterMedium: 'BitterMedium', sans-serif;
+$font-BitterSemiBold: 'BitterSemiBold', sans-serif;
+$font-BitterThin: 'BitterThin', sans-serif;
+$font-BitterItalic: 'BitterItalic', sans-serif;
+
+// Font Family BeVietnamPro
+$font-BeVietnamProRegular: 'BeVietnamProRegular', sans-serif;
+$font-BeVietnamProMedium: 'BeVietnamProMedium', sans-serif;
+$font-BeVietnamProLight: 'BeVietnamProLight', sans-serif;
+$font-BeVietnamProBlack: 'BeVietnamProBlack', sans-serif;
+$font-BeVietnamProBold: 'BeVietnamProBold', sans-serif;
+$font-BeVietnamProExtraBold: 'BeVietnamProExtraBold', sans-serif;
+$font-BeVietnamProExtraLight: 'BeVietnamProExtraLight', sans-serif;
+$font-BeVietnamProItalic: 'BeVietnamProItalic', sans-serif;
+$font-BeVietnamProSemiBold: 'BeVietnamProSemiBold', sans-serif;
+$font-BeVietnamProThin: 'BeVietnamProThin', sans-serif;
+
+// Fonts Weights
+$fw--100: 100; // thin/hairline
+$fw--200: 200; // extra-light/ultra-light
+$fw--300: 300; // light*
+$fw--400: 400; // normal/regular/book/roman*
+$fw--500: 500; // medium
+$fw--600: 600; // semi-bold/demi-bold
+$fw--700: 700; // bold*
+$fw--800: 800; // extra-bold/ultra-bold
+$fw--900: 900; // black/heavy
+
+$font-size-base: 1.0625rem;
+$line-height-base: 1.875rem;
+// --- Font Sizes ---
+// (Values are illustrative, adjust to your exact design system)
+
+// Smallest text
+$fs--xs: 14px; // e.g., caption, utility text
+
+// Body text / Paragraphs
+$fs--sm: 16px; // e.g., default body copy
+$fs--md: 18px;
+
+// Section titles / Sub-headings
+$fs--lg: 20px;
+$fs--xl: 24px;
+
+// Main Headings (H3, H2, H1 equivalents)
+$fs--2xl: 32px; // Corresponds to H3
+$fs--3xl: 38px; // Corresponds to H2
+$fs--4xl: 46px; // Corresponds to H1
+$border-radius: 0.5rem;
+
+$browser-context: 16px;
+
+$spacing--sm: 1em;
+$spacing--l: 2em;
+
+
+// Breakpoints
+$bp--xsmall: 22rem;
+$bp--small: 30rem;
+$bp--medium: 38rem;
+$bp--large: 45rem;
+$bp--xlarge: 960px;
+$bp--xxlarge: 1200px;
+$bp--xxxlarge: 100rem;

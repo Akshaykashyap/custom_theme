@@ -1,0 +1,25 @@
+# Theme meta Information
+name: 'IT For Change'
+type: theme
+core_version_requirement: ^10 | ^11
+base theme: stable9
+
+description: 'Custom Drupal 11 theme using Bootstrap, Slick, and Font Awesome'
+package: Custom
+
+# Adding libraries 
+libraries:
+  - It_for_change/global
+  
+# Regions
+regions:
+  header: 'Header'
+  hero_banner: 'Banner'
+  banner_sub_menu: 'Banner Sub Menu Section'
+  content_top: 'Content Top'
+  content: 'Content'
+  content_bottom: 'Content Bottom'
+  footer: 'Footer'
+  footer_top: 'Footer Top'
+  footer_middle: 'Footer Middle'
+  footer_bottom: 'Footer Bottom'

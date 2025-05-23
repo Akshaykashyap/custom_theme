@@ -1,0 +1,185 @@
+/* ======================================================
+   Global Reset / Normalize - SCSS Base
+   ====================================================== */
+
+   @use '../abstracts' as *;
+
+/* Box-sizing: border-box for all */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure,
+blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role="list"],
+ol[role="list"],
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scroll behavior */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Base font styles */
+html,
+body {
+  height: 100%;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  background-color: $ITfC-Off-white;
+  overflow-x: hidden;
+  @include t--base;
+   // font-size: clamp(14px, 13px + 0.3125vw, 17px);
+  // line-height: clamp(25px, 23.3333px + 0.520833vw, 30px);
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove built-in form styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+}
+
+.clearfix {
+     @include clearfix(); 
+}
+  
+  // From hidden.module.css
+.hidden {
+    display: none;
+}
+  
+.visually-hidden {
+    @include visually-hidden;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+/* Buttons - allow styling */
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Remove all animations and transitions for people that prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+h1 { @include t--h1; }
+h2 { @include t--h2; }
+h3 { @include t--h3; }
+h4 { @include t--h4; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+// Paragraphs
+p {
+  margin-bottom: 1.25rem;
+  @include t--base;
+}
+
+// Small text
+small {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+// Utility classes
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.01em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Image Style */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Links
+a {
+  color: $ITfC-LogoBlue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul, ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}

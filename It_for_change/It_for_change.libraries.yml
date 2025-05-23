@@ -1,0 +1,18 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      dist/css/style.css: { weight: 1 }
+      assets/libraries/slick/slick.css: {}
+      assets/libraries/fontawesome/css/all.min.css: {}
+      assets/libraries/bootstrap/css/bootstrap.min.css: {}
+      assets/libraries/bootstrap/css/bootstrap-grid.min.css: {}
+  js:
+    assets/libraries/bootstrap/js/bootstrap.bundle.min.js: {}
+    assets/libraries/fontawesome/js/all.min.js: {}
+    assets/libraries/slick/slick.min.js: {}
+    dist/js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

@@ -1,0 +1,47 @@
+   @use '../abstracts' as *;
+
+// .hero_banner--section {
+//   position: relative;
+  
+//   .featured {
+//     @extend %poppins-bold;
+//     font-size: $f92;
+//     line-height: 102px;
+//     letter-spacing: 0px;
+//     position: absolute;
+//     top: 50%;
+//     max-width: 750px;
+//     color: $white;
+//     left: 17%;
+//     display: -webkit-box;
+//     -webkit-line-clamp: 2;
+//     -webkit-box-orient: vertical;
+//     overflow: hidden;
+//     @media (max-width: #{$breakpoint-mobile}) {
+//       /* Styles for mobile devices */
+//       font-size: $f39;
+//       line-height: 49px;
+//       left: 50%;
+//       top: 50%;
+//       transform: translate(-50%,-50%);
+//     }
+//   }
+
+//   .meat-feast {
+//     @extend %poppins-light;
+//     position: absolute;
+//     bottom: 0;
+//     left: 230px;
+//     border: 1px solid $white;
+//     background: $white;
+//     padding: 2px 8px;
+//     font-size: $f14;
+//     line-height: 14px;
+//     letter-spacing: 0.5px;
+
+//     @media (max-width: #{$breakpoint-mobile}) {
+//       /* Styles for mobile devices */
+//       left: 10px;
+//     }
+//   }
+// }

@@ -1,0 +1,45 @@
+// Bootstrap (optional if using SCSS version installed via npm or downloaded)
+@use "../libraries/bootstrap/css/bootstrap.min.css";
+@use "../libraries/bootstrap/css/bootstrap-grid.min.css";
+
+// variables
+@use './abstracts/variables';
+
+// colors
+@use './abstracts/colors';
+
+// mixins
+@use './abstracts/mixins';
+
+// typography
+@use './abstracts/typography';
+
+// base
+@use './base/reset';
+@use './base/globel';
+
+// layouts
+@use './layout/header';
+@use './layout/footer';
+@use './layout/grid';
+
+//components
+@use './components/banner';
+@use './components/breadcrumb';
+@use './components/button';
+@use './components/cards';
+@use './components/filters';
+@use './components/form';
+@use './components/navbar';
+@use './components/overlay';
+@use './components/pagination';
+@use './components/search';
+@use './components/slick';
+@use './components/tabs';
+@use './components/text-and-image';
+
+// pages
+@use './pages/about-us';
+@use './pages/publication';
+@use './pages/media';
+@use './pages/event';

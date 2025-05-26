@@ -39,13 +39,14 @@ html:focus-within {
 html,
 body {
   height: 100%;
+  @include font($font-BeVietnamProRegular,$font-size-base, normal, $fw--300 , $line-height-base);
+  font-size: clamp(14px, 13px + 0.3125vw, 17px);
+  line-height: clamp(25px, 23.3333px + 0.520833vw, 30px);
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
+  color: $ITfC-Blueblack;
   background-color: $ITfC-Off-white;
   overflow-x: hidden;
-  @include t--base;
-   // font-size: clamp(14px, 13px + 0.3125vw, 17px);
-  // line-height: clamp(25px, 23.3333px + 0.520833vw, 30px);
 }
 
 /* Make images easier to work with */
@@ -74,8 +75,10 @@ select {
   appearance: none;
 }
 
-.clearfix {
-     @include clearfix(); 
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
   
   // From hidden.module.css
@@ -84,17 +87,16 @@ select {
 }
   
 .visually-hidden {
-    @include visually-hidden;
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal;
 }
 
 .invisible {
     visibility: hidden;
-}
-
-/* Buttons - allow styling */
-button {
-  background-color: transparent;
-  cursor: pointer;
 }
 
 /* Remove all animations and transitions for people that prefer reduced motion */
@@ -117,12 +119,12 @@ h1 { @include t--h1; }
 h2 { @include t--h2; }
 h3 { @include t--h3; }
 h4 { @include t--h4; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+// h5 { font-size: 1.25rem; }
+// h6 { font-size: 1rem; }
 
 // Paragraphs
 p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   @include t--base;
 }
 
@@ -164,7 +166,7 @@ img {
   height: auto;
 }
 
-// Links
+//  Anchor Links
 a {
   color: $ITfC-LogoBlue;
   text-decoration: none;

@@ -12,18 +12,20 @@
   justify-content: center;
 }
 
-// Box shadow
-@mixin box-shadow($shadow...) {
-  box-shadow: $shadow;
+// Box-shadow mixin
+@mixin box-shadow($x: 0, $y: 2px, $blur: 10px, $spread: 0, $color: rgba(0, 0, 0, 0.25)) {
+  box-shadow: $x $y $blur $spread $color;
 }
 
+
 // Flex container
-@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $agp: 1rem) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
+  gap: $gap;
 }
 
 // Background image
@@ -35,7 +37,7 @@
 }
 
 // Text color
-@mixin color($color) {
+@mixin color($color: $ITfC-White) {
   color: $color;
 }
 
@@ -50,6 +52,64 @@
   font-style: $font-style;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
+}
+
+
+@mixin card(
+  $bg-color: $ITfC-White,
+  $border-radius: 0.5rem,
+  $box-shadow: 0 2px 10px 0 rgba(15, 47, 82, 0.20),
+  $set-padding: null,
+  $hover-transition: box-shadow 0.3s ease,
+  $min-width: 20rem,
+  $min-height:22.5rem,
+  $set-border: null,
+  $image-height: null,
+  $image-width: 100%,
+  $image-fit: cover,
+  $sm-width: null,
+  $sm-height: null,
+  $md-width: null,
+  $md-height: null
+) {
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $set-padding;
+  border: $set-border;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  width: $min-width;
+  min-height: $min-height;
+
+   // Image styles
+  img {
+    display: block;
+    width: $image-width;
+    height: $image-height;
+    object-fit: $image-fit;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  // Hover effect for interactivity
+  &:hover {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+    @include set-border(2px, solid, $ITfC-LogoBlue);
+  }
+    // Responsive width & height
+  @if $sm-width or $sm-height {
+    @media (max-width: 768px) {
+      width: if($sm-width != null, $sm-width, $min-width);
+      min-height: if($sm-height != null, $sm-height, $min-height);
+    }
+  }
+
+  @if $md-width or $md-height {
+    @media (max-width: 768px) {
+      width: if($md-width != null, $md-width, $min-width);
+      min-height: if($md-height != null, $md-height, $min-height);
+    }
+  }
 }
 
 
@@ -96,13 +156,6 @@
 }
 
 /// Full background property mixin
-/// $color: optional solid background color
-/// $image: optional background image URL
-/// $repeat: repeat, no-repeat, repeat-x, etc.
-/// $position: top, center, bottom, etc.
-/// $size: contain, cover, auto
-/// $attachment: scroll or fixed
-
 @mixin background-all(
   $color: null,
   $image: null,
@@ -315,75 +368,62 @@
      }
 }
 
+// padding mixin
+@mixin set-padding($top: 0, $right: $top, $bottom: $top, $left: $right) {
+    padding: $top $right $bottom $left;
+  }
+
+// Border Mixin
+@mixin set-border($width: 1px, $style: solid, $color: black, $side: null) {
+    @if $side {
+      // If a side is specified, apply border to that specific side
+      border-#{$side}: $width $style $color;
+    } @else {
+      // Otherwise, apply the border to all four sides (shorthand)
+      border: $width $style $color;
+    }
+}
 
 // GRADIENT MIXINS
-
 @mixin linear-gradient-main() {
-    background-image: linear-gradient(to bottom, $color-main, $color-main);
+    background: linear-gradient(180deg, #D4E5FF 0%, #FAFCFF 138%);
 }
-
-@mixin linear-gradient-main-hover() {
-    background-image: linear-gradient(to bottom, $color-main, $color-main);
-}
-
-@mixin linear-gradient-secondary() {
-    background-image: linear-gradient(to bottom, $c-grass-green, $c-grass-green30);
-}
-
-@mixin linear-gradient-secondary-hover() {
-    background-image: linear-gradient(to bottom, $c-grass-green30, $c-grass-green10);
-}
-
 
 // Button 
 @mixin button() {
-    @include t--base();
-    @include font-size-extra-small();
-    @include linear-gradient-main();
-    background: linear-gradient(to bottom, #b6d478 0%, #4e800d 100%);
-    /* W3C */
-    color: $c-black;
-    border: medium none;
-    display: inline-block;
-    padding: 0.3rem 2.5rem;
-    text-align: center;
+    @include font($font-BeVietnamProBold,14px, normal, $fw--700 , 16px);
+    @include border-radius(8px);
+    @include set-padding(15px, 74px);
+    @include flex-center;
+    @include set-border(1px,solid,$ITfC-Orange);
+    color: $ITfC-Orange;   
+    text-transform: uppercase;
     white-space: nowrap;
-    border-radius: .5rem;
 
     &:hover {
         cursor: pointer;
+        background-color: $ITfC-Orange;
+        color: $ITfC-White;
+        
     }
 
     &:focus {
-        color: $c-white;
+        color: $ITfC-Orange;
     }
 }
 
 @mixin button-secondary() {
     background: linear-gradient(to bottom, #b8d5d5 0%, #19706f 100%);
-    /* W3C */
 
     &:hover {
         cursor: pointer;
     }
 }
 
-@mixin border-radius($radius: .15em) {
+@mixin border-radius($radius: 0.5rem) {
 	border-radius: $radius;
 }
-
-@mixin teaser-base {
-    overflow: hidden;
-    display: flex;
-}
-  
-@mixin teaser-border-radius {
-    border-radius: .125rem 0.625rem 0.625rem 0.625rem;
-}
-  
-@mixin teaser-fullbar-spacing {
-    border-left: 1rem solid;
-}
+ 
 
 @mixin teaser-header-spacing {
     border-left: 1rem solid;
@@ -394,21 +434,17 @@
     border-bottom: 4px solid;
 }
 
-@mixin line-gradient($baseopacity, $factor, $color1, $color2) {
-    $compute_factor: $baseopacity + $factor;
-      background: linear-gradient(to bottom,  rgba($color1, 1) 0%, rgba($color2, $baseopacity) 100%); /* W3C */
-    
-}
-
 // Smart Grid
 /// Include in a parent element to layout all children
-/// @param $row-items [4] - How many items per row
+/// @param $row-items [3] - How many items per row
 /// @param $gutter [1rem] - Space between Items
-@mixin smart-grid($row-items: 4, $gutter: $grid-gutter) {
+@mixin smart-grid($row-items: 5, $gutter: $grid-gutter) {
     $column: calc(100% / $row-items);
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: $gutter;
     > * {
       margin-bottom: $gutter;
       @if $row-items > 1 {
@@ -418,4 +454,3 @@
       }
     }
 }
-  
